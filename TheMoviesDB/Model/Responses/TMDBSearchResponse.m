@@ -11,4 +11,9 @@
 
 @implementation TMDBSearchResponse
 
+- (instancetype)initWithJSON:(NSDictionary *)json {
+    self = [super initWithJSON:json];
+    return self;
+}
+
 @end

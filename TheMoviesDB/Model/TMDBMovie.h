@@ -7,10 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "TMDBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TMDBMovie : NSObject
+@interface TMDBMovie : TMDBaseModel
 
 @end
 

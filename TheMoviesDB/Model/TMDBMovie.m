@@ -7,6 +7,7 @@
 //
 
 #import "TMDBMovie.h"
+#import "APIHelper.h"
 
 @interface TMDBMovie ()
 
@@ -30,13 +31,28 @@
 
 @implementation TMDBMovie
 
-- (instancetype)init
-{
-    self = [super init];
-    if (self) {
-        
+- (void)setValue:(id)value forKey:(NSString *)key {
+    [super setValue:value forKey:key];
+    NSLog(@"%@: %@", value, key);
+    
+    
+}
+
+- (void)setValue:(id)value forUndefinedKey:(NSString *)key {
+    
+    APIKey apiKey = [APIHelper keyWithValue:key];
+    
+    switch (apiKey) {
+        case APIKeyVoteCount:           [self setValue:value forKey:@"voteCount"];          break;
+        case APIKeyVoteAverage:         [self setValue:value forKey:@"voteAverage"];        break;
+        case APIKeyReleaseDate:         [self setValue:value forKey:@"realeaseDate"];       break;
+        case APIKeyOriginalLanguage:    [self setValue:value forKey:@"originalLanguage"];   break;
+        case APIKeyOriginalTitle:       [self setValue:value forKey:@"originalTitle"];      break;
+        case APIKeyGenreIds:            [self setValue:value forKey:@"genreIds"];           break;
+        case APIKeyBackdropPath:        [self setValue:value forKey:@"backdropPath"];       break;
+        case APIKeyPosterPath:          [self setValue:value forKey:@"posterPath"];         break;
+        default:                        [super setValue:value forUndefinedKey:key];        break;
     }
-    return self;
 }
 
 @end

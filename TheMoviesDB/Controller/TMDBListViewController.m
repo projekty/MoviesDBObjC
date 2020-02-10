@@ -7,6 +7,7 @@
 //
 
 #import "TMDBListViewController.h"
+#import "APIManager.h"
 
 @interface TMDBListViewController ()
 
@@ -17,7 +18,11 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view.
+    [self loadData];
 }
 
+- (void)loadData {
+    [[APIManager shared] request];
+}
 
 @end

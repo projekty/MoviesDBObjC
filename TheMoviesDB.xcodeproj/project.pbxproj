@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		471DB7FA23EF73710052DBE0 /* APIManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DB7F923EF73710052DBE0 /* APIManager.m */; };
+		471DB7FE23F005FC0052DBE0 /* APIEntryError.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DB7FD23F005FC0052DBE0 /* APIEntryError.m */; };
+		471DB80223F00C4E0052DBE0 /* TMDBJSONParser.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DB80123F00C4E0052DBE0 /* TMDBJSONParser.m */; };
+		471DB80C23F0BB580052DBE0 /* TMDBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DB80B23F0BB580052DBE0 /* TMDBaseModel.m */; };
+		471DB81223F15B660052DBE0 /* APIHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 471DB81123F15B660052DBE0 /* APIHelper.m */; };
 		47535B7923EEDA90009B2038 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 47535B7823EEDA90009B2038 /* Assets.xcassets */; };
 		47535B7F23EEDA90009B2038 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 47535B7E23EEDA90009B2038 /* main.m */; };
 		47535B8D23EEDCB5009B2038 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 47535B8B23EEDCB5009B2038 /* AppDelegate.m */; };
@@ -22,6 +27,18 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		471DB7F823EF73710052DBE0 /* APIManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = APIManager.h; path = TheMoviesDB/Controller/APIs/APIManager.h; sourceTree = SOURCE_ROOT; };
+		471DB7F923EF73710052DBE0 /* APIManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = APIManager.m; path = TheMoviesDB/Controller/APIs/APIManager.m; sourceTree = SOURCE_ROOT; };
+		471DB7FC23F005FC0052DBE0 /* APIEntryError.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIEntryError.h; sourceTree = "<group>"; };
+		471DB7FD23F005FC0052DBE0 /* APIEntryError.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIEntryError.m; sourceTree = "<group>"; };
+		471DB80023F00C4E0052DBE0 /* TMDBJSONParser.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDBJSONParser.h; sourceTree = "<group>"; };
+		471DB80123F00C4E0052DBE0 /* TMDBJSONParser.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMDBJSONParser.m; sourceTree = "<group>"; };
+		471DB80623F024F30052DBE0 /* TMDBParserProtocol.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDBParserProtocol.h; sourceTree = "<group>"; };
+		471DB80923F0B0160052DBE0 /* APIKeys.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIKeys.h; sourceTree = "<group>"; };
+		471DB80A23F0BB580052DBE0 /* TMDBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = TMDBaseModel.h; sourceTree = "<group>"; };
+		471DB80B23F0BB580052DBE0 /* TMDBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TMDBaseModel.m; sourceTree = "<group>"; };
+		471DB81023F15B660052DBE0 /* APIHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = APIHelper.h; sourceTree = "<group>"; };
+		471DB81123F15B660052DBE0 /* APIHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = APIHelper.m; sourceTree = "<group>"; };
 		47535B6923EEDA8E009B2038 /* TheMoviesDB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheMoviesDB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		47535B7823EEDA90009B2038 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		47535B7E23EEDA90009B2038 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = main.m; path = ../main.m; sourceTree = "<group>"; };
@@ -56,6 +73,36 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		471DB7FB23EF737B0052DBE0 /* API */ = {
+			isa = PBXGroup;
+			children = (
+				471DB80923F0B0160052DBE0 /* APIKeys.h */,
+				471DB81023F15B660052DBE0 /* APIHelper.h */,
+				471DB81123F15B660052DBE0 /* APIHelper.m */,
+				471DB7FC23F005FC0052DBE0 /* APIEntryError.h */,
+				471DB7FD23F005FC0052DBE0 /* APIEntryError.m */,
+				471DB7F823EF73710052DBE0 /* APIManager.h */,
+				471DB7F923EF73710052DBE0 /* APIManager.m */,
+			);
+			path = API;
+			sourceTree = "<group>";
+		};
+		471DB7FF23F00C390052DBE0 /* Parser */ = {
+			isa = PBXGroup;
+			children = (
+				471DB80023F00C4E0052DBE0 /* TMDBJSONParser.h */,
+				471DB80123F00C4E0052DBE0 /* TMDBJSONParser.m */,
+			);
+			path = Parser;
+			sourceTree = "<group>";
+		};
+		471DB81323F17F420052DBE0 /* Extensoins */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensoins;
+			sourceTree = "<group>";
+		};
 		47535B6023EEDA8E009B2038 = {
 			isa = PBXGroup;
 			children = (
@@ -75,6 +122,7 @@
 		47535B6B23EEDA8E009B2038 /* TheMoviesDB */ = {
 			isa = PBXGroup;
 			children = (
+				471DB81323F17F420052DBE0 /* Extensoins */,
 				47535B8823EEDB13009B2038 /* Supporting Files */,
 				47535B8523EEDAF4009B2038 /* Model */,
 				47535BB923EEDD62009B2038 /* View */,
@@ -86,11 +134,14 @@
 		47535B8523EEDAF4009B2038 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				47535BCF23EF2E4C009B2038 /* Responses */,
+				471DB80623F024F30052DBE0 /* TMDBParserProtocol.h */,
+				471DB80A23F0BB580052DBE0 /* TMDBaseModel.h */,
+				471DB80B23F0BB580052DBE0 /* TMDBaseModel.m */,
 				47535BC023EEE1FB009B2038 /* TMDBMovie.h */,
 				47535BC123EEE1FB009B2038 /* TMDBMovie.m */,
 				47535BC623EEF5CF009B2038 /* TMDBDate.h */,
 				47535BC723EEF5D0009B2038 /* TMDBDate.m */,
+				47535BCF23EF2E4C009B2038 /* Responses */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -98,6 +149,8 @@
 		47535B8723EEDB05009B2038 /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				471DB7FF23F00C390052DBE0 /* Parser */,
+				471DB7FB23EF737B0052DBE0 /* API */,
 				47535B9023EEDCC4009B2038 /* TMDBListViewController.h */,
 				47535B8F23EEDCC4009B2038 /* TMDBListViewController.m */,
 			);
@@ -211,11 +264,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				47535B8D23EEDCB5009B2038 /* AppDelegate.m in Sources */,
+				471DB80223F00C4E0052DBE0 /* TMDBJSONParser.m in Sources */,
 				47535B9123EEDCC4009B2038 /* TMDBListViewController.m in Sources */,
+				471DB7FE23F005FC0052DBE0 /* APIEntryError.m in Sources */,
 				47535BCE23EF2E40009B2038 /* TMDBBaseResponse.m in Sources */,
 				47535BC523EEF43E009B2038 /* TMDBNowPlayingResponse.m in Sources */,
+				471DB7FA23EF73710052DBE0 /* APIManager.m in Sources */,
 				47535BCB23EEF9F4009B2038 /* TMDBSearchResponse.m in Sources */,
 				47535BC223EEE1FB009B2038 /* TMDBMovie.m in Sources */,
+				471DB80C23F0BB580052DBE0 /* TMDBaseModel.m in Sources */,
+				471DB81223F15B660052DBE0 /* APIHelper.m in Sources */,
 				47535B8E23EEDCB5009B2038 /* SceneDelegate.m in Sources */,
 				47535B7F23EEDA90009B2038 /* main.m in Sources */,
 				47535BC823EEF5D0009B2038 /* TMDBDate.m in Sources */,

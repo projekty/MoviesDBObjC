@@ -8,18 +8,21 @@
 
 #import <Foundation/Foundation.h>
 #import "TMDBMovie.h"
+#import "TMDBaseModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TMDBBaseResponse : NSObject
+@interface TMDBBaseResponse : TMDBaseModel
 
 @property (nonatomic, strong) NSNumber *page;//min = 1, max = 1000, default = 1
 @property (nonatomic, strong) NSArray<TMDBMovie *> *results;
 @property (nonatomic, strong) NSNumber *totalPages;
 @property (nonatomic, strong) NSNumber *totalResults;
 
-- (instancetype)initWithJSON:(NSJSONSerialization *)json;
+- (instancetype)initWithJSON:(NSDictionary *)json sourceType:(TMDBSourceType)type;
 
 @end
 
 NS_ASSUME_NONNULL_END
+
+typedef void (^TMDBResponseBlock)(TMDBBaseResponse *_Nonnull);
