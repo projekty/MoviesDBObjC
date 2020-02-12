@@ -66,11 +66,11 @@ typedef struct {
 
 #pragma mark - Images
 + (NSURL *)urlForImagePath:(NSString *)imagePath {
-    //TODO: get configuration, get size
+    //TODO: get configuration, get size and handle
     
     NSString *base = [APIManager shared].configuration.serverConfiguration.secureBaseURL;
     NSArray *sizes = [APIManager shared].configuration.serverConfiguration.backdropSizes;
-    NSString *size = sizes.firstObject;
+    __unused NSString *size = sizes.firstObject;
     
     NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@w342%@", base, imagePath]];
     return url;

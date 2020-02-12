@@ -12,7 +12,9 @@
 @implementation TMDBJSONParser
 
 + (TMDBBaseResponse *)responseFromJSONData:(NSData *)jsonData error:(__autoreleasing NSError **)error sourceType:(TMDBSourceType)type {
-    *error = nil;
+    if (error != NULL) {
+        *error = nil;
+    }
     id json = [self jsonFromJSONData:jsonData jsonError:error];
     if (*error) {
         return nil;
@@ -30,8 +32,10 @@
     id message = json[[APIHelper valueForKey:APIKeyStatusMessage]];
     id errors = json[[APIHelper valueForKey:APIKeyErrors]];
     if (message || errors) {
-        *error = [NSError errorWithDomain:@"Bad query" code:1 userInfo:@{NSLocalizedDescriptionKey: errors ? errors : message}];
-        return nil;
+        if (error != NULL) {
+            *error = [NSError errorWithDomain:@"Bad query" code:1 userInfo:@{NSLocalizedDescriptionKey: errors ? errors : message}];
+            return nil;
+        }
     }
     return [[TMDBBaseResponse alloc] initWithJSON:json sourceType:type];
 }

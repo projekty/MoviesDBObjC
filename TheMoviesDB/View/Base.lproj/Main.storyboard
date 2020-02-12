@@ -196,7 +196,7 @@
                         <viewLayoutGuide key="safeArea" id="WGA-PH-BWN"/>
                     </view>
                     <navigationItem key="navigationItem" id="dJK-Hf-S2U">
-                        <barButtonItem key="rightBarButtonItem" style="plain" id="GdV-Vg-MLv">
+                        <barButtonItem key="rightBarButtonItem" style="done" id="GdV-Vg-MLv">
                             <button key="customView" opaque="NO" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" adjustsImageSizeForAccessibilityContentSizeCategory="YES" lineBreakMode="middleTruncation" id="RY1-et-NmH">
                                 <rect key="frame" x="334" y="0.0" width="60" height="44"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
