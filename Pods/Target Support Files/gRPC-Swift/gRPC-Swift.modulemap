@@ -1,0 +1,6 @@
+framework module gRPC_Swift {
+  umbrella header "gRPC-Swift-umbrella.h"
+
+  export *
+  module * { export * }
+}

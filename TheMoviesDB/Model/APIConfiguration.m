@@ -15,25 +15,22 @@ NSString* const NOW_PLAYING = @"/movie/now_playing";
 @implementation APIConfiguration
 
 - (nullable NSURL *)configurationUrl {
-    //TODO: make it proffesional
+    //TODO: NSQueryItems
     NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"https://api.themoviedb.org/3/configuration"];//to const
-    components.query = [self apiKeyQuery];
+    components.queryItems = @[[[NSURLQueryItem alloc] initWithName:@"api_key" value:[NSString stringWithFormat:@"%@", API_KEY]]];
     NSURL * url = components.URL;
     return url;
 }
 
 - (nullable NSURL *)urlNowPlayingForPage:(NSNumber *)page language:(NSString * _Nullable)language {
-    //TODO: make it proffesional (NSQueryItems)
     //TODO: add language
-    NSURLComponents *components = [[NSURLComponents alloc] initWithString:[NSString stringWithFormat:@"https://api.themoviedb.org/3/movie/now_playing?%@&page=%@", [self apiKeyQuery], page]];//to const
+    NSURLComponents *components = [[NSURLComponents alloc] initWithString:@"https://api.themoviedb.org/3/movie/now_playing"];//to const
+  components.queryItems = @[[[NSURLQueryItem alloc] initWithName:@"api_key" value:[NSString stringWithFormat:@"%@", API_KEY]],
+                            [[NSURLQueryItem alloc] initWithName:@"page" value:[NSString stringWithFormat:@"%@", page]]];
 //    components.query = [self apiKeyQuery];
-    
+
     NSURL * url = components.URL;
     return url;
-}
-
-- (NSString *)apiKeyQuery {
-    return [NSString stringWithFormat:@"api_key=%@", API_KEY];
 }
 
 @end
