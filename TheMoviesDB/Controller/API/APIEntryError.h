@@ -10,7 +10,7 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface APIEntryError : NSObject
+@interface APIEntryError : NSError
 
 @property (nonatomic, strong) NSString * _Nonnull name;
 

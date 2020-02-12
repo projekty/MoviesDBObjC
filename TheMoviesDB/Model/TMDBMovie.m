@@ -31,12 +31,6 @@
 
 @implementation TMDBMovie
 
-- (void)setValue:(id)value forKey:(NSString *)key {
-    [super setValue:value forKey:key];
-    NSLog(@"%@: %@", value, key);
-    
-    
-}
 
 - (void)setValue:(id)value forUndefinedKey:(NSString *)key {
     
@@ -51,8 +45,39 @@
         case APIKeyGenreIds:            [self setValue:value forKey:@"genreIds"];           break;
         case APIKeyBackdropPath:        [self setValue:value forKey:@"backdropPath"];       break;
         case APIKeyPosterPath:          [self setValue:value forKey:@"posterPath"];         break;
-        default:                        [super setValue:value forUndefinedKey:key];        break;
+        default:                        [super setValue:value forUndefinedKey:key];         break;
     }
+}
+
+#pragma mark - DetailSourceable
+
+- (nonnull NSNumber *)rating {
+    return self.voteAverage;
+}
+
+- (nonnull NSString *)detailImagePath {
+    return self.posterPath;
+}
+
+- (NSInteger)movieId {
+    return self.id;
+}
+
+@end
+
+#pragma mark -
+@implementation TMDBMovie (CollectionSourceable)
+
+- (nonnull NSString *)sourceableTitle {
+    return self.title;
+}
+
+- (nonnull NSString *)sourceableSubtitle {
+    return self.overview;
+}
+
+- (nullable NSString *)sourceableImagePath {
+    return self.backdropPath ? self.backdropPath : self.posterPath;
 }
 
 @end

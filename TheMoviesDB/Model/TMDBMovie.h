@@ -8,10 +8,12 @@
 
 #import <Foundation/Foundation.h>
 #import "TMDBaseModel.h"
+#import "CollectionSourceable.h"
+#import "DetailSourceable.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
-@interface TMDBMovie : TMDBaseModel
+@interface TMDBMovie<CollectionSourceable, DetailSourceable> : TMDBaseModel
 
 @end
 

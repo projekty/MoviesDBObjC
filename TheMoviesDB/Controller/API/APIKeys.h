@@ -13,6 +13,7 @@ typedef NS_ENUM(NSInteger, APIKey) {
     APIKeyNone,
     APIKeyStatusMessage,
     APIKeyErrors,
+    APIKeyResult,
     APIKeyDates,
     APIKeyVoteCount,
     APIKeyVoteAverage,
@@ -24,6 +25,10 @@ typedef NS_ENUM(NSInteger, APIKey) {
     APIKeyPosterPath,
     APIKeyTotalPages,
     APIKeyTotalResults,
+    APIKeyBackdropSizes,
+    APIKeyImages,
+    APIKeyPosterSizes,
+    APISecureBaseURL,
     APIKeyCount,
 };
 

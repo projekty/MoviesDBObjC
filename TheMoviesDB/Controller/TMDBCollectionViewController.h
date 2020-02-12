@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface TMDBListViewController : UIViewController
+@interface TMDBCollectionViewController : UICollectionViewController <UICollectionViewDelegateFlowLayout>
 
 
 @end

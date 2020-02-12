@@ -15,6 +15,7 @@ NS_ASSUME_NONNULL_BEGIN
 
 + (NSString *)valueForKey:(APIKey)key;
 + (APIKey)keyWithValue:(NSString *)value;
++ (NSURL *)urlForImagePath:(NSString *)imagePath;
 
 @end
 

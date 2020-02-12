@@ -7,7 +7,7 @@
 //
 
 #import "APIHelper.h"
-
+#import "APIManager.h"
 
 @implementation APIHelper
 
@@ -24,6 +24,7 @@ typedef struct {
         case APIKeyStatusMessage:               return @"status_message";
         case APIKeyErrors:                      return @"errors";
         case APIKeyDates:                       return @"dates";
+        case APIKeyResult:                      return @"results";
         case APIKeyVoteCount:                   return @"vote_count";
         case APIKeyVoteAverage:                 return @"vote_average";
         case APIKeyReleaseDate:                 return @"release_date";
@@ -35,11 +36,13 @@ typedef struct {
         case APIKeyTotalPages:                  return @"total_pages";
         case APIKeyTotalResults:                return @"total_results";
         case APIKeyNone:                        return @"key_none";
+        case APIKeyBackdropSizes:               return @"backdrop_sizes";
+        case APIKeyPosterSizes:                 return @"poster_sizes";
+        case APIKeyImages:                      return @"images";
+        case APISecureBaseURL:                  return @"secure_base_url";
         case APIKeyCount:                       return @"key_count";
     }
 }
-
-union matcher { APIKey key; BOOL match; };
 
 + (APIKey)keyWithValue:(NSString *)value {
     for (int i = 0; i < APIKeyCount; i++) {
@@ -48,6 +51,7 @@ union matcher { APIKey key; BOOL match; };
             return matcher.key;
         }
     }
+    
     return APIKeyNone;
 }
 
@@ -58,6 +62,18 @@ union matcher { APIKey key; BOOL match; };
         matcher.match = YES;
     }
     return matcher;
+}
+
+#pragma mark - Images
++ (NSURL *)urlForImagePath:(NSString *)imagePath {
+    //TODO: get configuration, get size
+    
+    NSString *base = [APIManager shared].configuration.serverConfiguration.secureBaseURL;
+    NSArray *sizes = [APIManager shared].configuration.serverConfiguration.backdropSizes;
+    NSString *size = sizes.firstObject;
+    
+    NSURL *url = [NSURL URLWithString:[NSString stringWithFormat:@"%@w342%@", base, imagePath]];
+    return url;
 }
 
 @end
